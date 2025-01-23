@@ -13,7 +13,7 @@ pole nr. 74 to pole w którym są wygrane pionki, trzeba ich mieć 4
 w indeksie nr. 75 są pionki których nie ma na planszy, czyli trzeba wyrzucić 6
 
 # spec usera:
-serwer wierzy, że użytkownik nie majstrował przy generatorze liczb losowych, oraz że na tyle na ile można nie robi głupich requestów
+serwer wierzy, że użytkownik nie majstrował przy generatorze liczb losowych, oraz że na tyle na ile można - nie robi głupich requestów
 
 # pomoce naukowa
 - "Szybki jak FastAPI" Bill Lubanovic
