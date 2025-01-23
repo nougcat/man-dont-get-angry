@@ -12,6 +12,8 @@ import requests
 import random
 
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HIGHT))
+pygame.display.set_caption('Chińczyk (Chinese)')
+
 
 run = True
 first_run_bool = True
@@ -34,44 +36,46 @@ while run:
         (player_id, player_order, number_of_players) = first_run()
         first_run_bool = False
         chinczyk_board = [
-            [0, 0, 0, 0, 1, 1, 3, 0, 0, 0, 0],
-            [0, 0, 0, 0, 1, 2, 1, 0, 0, 0, 0],
-            [0, 0, 0, 0, 1, 2, 1, 0, 0, 0, 0],
-            [0, 0, 0, 0, 1, 2, 1, 0, 0, 0, 0],
-            [1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1],
-            [1, 8, 8, 8, 8, 0, 4, 4, 4, 4, 1],
-            [9, 1, 1, 1, 1, 6, 1, 1, 1, 1, 5],
-            [0, 0, 0, 0, 1, 6, 1, 0, 0, 0, 0],
-            [0, 0, 0, 0, 1, 6, 1, 0, 0, 0, 0],
-            [0, 0, 0, 0, 1, 6, 1, 0, 0, 0, 0],
-            [0, 0, 0, 0, 7, 1, 1, 0, 0, 0, 0]
+            [0, 0, 0, 0, 9, 10, 11, 0, 0, 0, 0],
+            [0, 0, 0, 0, 8, 51, 12, 0, 0, 0, 0],
+            [0, 0, 0, 0, 7, 51, 13, 0, 0, 0, 0],
+            [0, 0, 0, 0, 6, 51, 14, 0, 0, 0, 0],
+            [1, 2, 3, 4, 5, 51, 15, 16, 17, 18, 19],
+            [40, 41, 41, 41, 41,  0, 61, 61, 61, 61, 20],
+            [39, 38, 37, 36, 35, 71, 25, 24, 23, 22, 21],
+            [0, 0, 0, 0, 34, 71, 26, 0, 0, 0, 0],
+            [0, 0, 0, 0, 33, 71, 27, 0, 0, 0, 0],
+            [0, 0, 0, 0, 32, 71, 28, 0, 0, 0, 0],
+            [0, 0, 0, 0, 31, 30, 29, 0, 0, 0, 0]
         ]
 
     # Drawing a chessboard
     square_size = 40
     for row in range(11):
         for col in range(11):
+            x = col * square_size + (SCREEN_WIDTH - 400) // 2
+            y = row * square_size + (SCREEN_HIGHT - 400) // 2
             if chinczyk_board[row][col]:
-                x = col * square_size + (SCREEN_WIDTH - 400) // 2
-                y = row * square_size + (SCREEN_HIGHT - 400) // 2
-                if chinczyk_board[row][col] == 2:
-                    pygame.draw.rect(screen, (255, 0, 0), (x, y, square_size, square_size))
-                elif chinczyk_board[row][col] == 3:
-                    pygame.draw.rect(screen, (128, 0, 0), (x, y, square_size, square_size))
-                elif chinczyk_board[row][col] == 4:
-                    pygame.draw.rect(screen, (0, 255, 0), (x, y, square_size, square_size))
-                elif chinczyk_board[row][col] == 5:
-                    pygame.draw.rect(screen, (0, 128, 0), (x, y, square_size, square_size))
-                elif chinczyk_board[row][col] == 6 and number_of_players > 2:
-                    pygame.draw.rect(screen, (0, 0, 255), (x, y, square_size, square_size))
-                elif chinczyk_board[row][col] == 7 and number_of_players > 2:
-                    pygame.draw.rect(screen, (0, 0, 128), (x, y, square_size, square_size))
-                elif chinczyk_board[row][col] == 8 and number_of_players > 3:
-                    pygame.draw.rect(screen, (255, 255, 0), (x, y, square_size, square_size))
-                elif chinczyk_board[row][col] == 9 and number_of_players > 3:
-                    pygame.draw.rect(screen, (128, 128, 0), (x, y, square_size, square_size))
-                else:
-                    pygame.draw.rect(screen, (255, 255, 255), (x, y, square_size, square_size))
+                match chinczyk_board[row][col]:
+                    case 1:
+                        pygame.draw.rect(screen, (255, 0, 0), (x, y, square_size, square_size))
+                    case 41:
+                        pygame.draw.rect(screen, (128, 0, 0), (x, y, square_size, square_size))
+                    case 11:
+                        pygame.draw.rect(screen, (0, 255, 0), (x, y, square_size, square_size))
+                    case 51: 
+                        pygame.draw.rect(screen, (0, 128, 0), (x, y, square_size, square_size))
+                    case 21 if number_of_players > 2:
+                        pygame.draw.rect(screen, (0, 0, 255), (x, y, square_size, square_size))
+                    case 61 if number_of_players > 2:
+                        pygame.draw.rect(screen, (0, 0, 128), (x, y, square_size, square_size))
+                    case 31 if number_of_players > 3:
+                        pygame.draw.rect(screen, (255, 255, 0), (x, y, square_size, square_size))
+                    case 71 if number_of_players > 3:
+                        pygame.draw.rect(screen, (128, 128, 0), (x, y, square_size, square_size))
+                    case _:
+                        pygame.draw.rect(screen, (255, 255, 255), (x, y, square_size, square_size))
+            
     # drawing corners (players)
     player_color_1 = (255, 0, 0)
     draw_player_base(pygame, screen, player_color_1, square_size, 0, 0)
@@ -94,6 +98,7 @@ while run:
         dice_text = font.render(f"You've rolled: {dice_roll}", True, (255, 255, 255))
         screen.blit(dice_text, (SCREEN_WIDTH//2 - dice_text.get_width()//2, 50))
         pygame.display.update()
+    
     while player_order == whos_turn_is_it and not game_not_active:
         
         for event in pygame.event.get():
@@ -115,7 +120,7 @@ while run:
                     break
         sleep(0.3)
     
-    while player_order != whos_turn_is_it and not game_not_active:
+    if player_order != whos_turn_is_it and not game_not_active:
         text = font.render("Waiting for other player turn...", True, (255, 255, 255))
         screen.blit(text, (SCREEN_WIDTH//2 - text.get_width()//2, 10))
         pygame.display.update()
@@ -148,10 +153,9 @@ while run:
         
         sleep(0.1)
     
-    # freeze everything unless game is active
+    # leaving the game
     for event in pygame.event.get():
-        # X to wyjście z gry
         if event.type == pygame.QUIT:
-            run = False    
+            run = False
 
 pygame.quit()
