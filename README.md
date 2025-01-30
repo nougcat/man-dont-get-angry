@@ -2,28 +2,37 @@
 
 game of chińczyk (Man, Don't Get Angry)
 
-instalacja potrzebnych pakietów
+## instalacja potrzebnych pakietów
 ```sh
 pip requirements.txt -r
 
 ```
 
-Uruchamiamy serwer:
+## Running a server
 ```sh
-
 python3 server.py
 ```
 
-
+## initializing gmae
 ```sh
-# domyślnie PORT to 2137
-localhost:PORT/game_init?how_many_players=2
+# by default port is 2137
+curl "localhost:PORT/game_init?how_many_players=2" # you can choose a number {2,3,4}  instead of 2
 ```
 
+## Running game
 ```sh
 python3 client.py
 ```
+## How to play?
 
+rules are [here](https://en.wikipedia.org/wiki/Mensch_%C3%A4rgere_Dich_nicht#Overview)
+
+if you want to choose pawn just select a number from 1-4; basically your pawns are numbered as proximity to the end line. So if a pawn is not on the board you can move it by pressing `4`; but if you want to move pawn that is the closest to finish line just press `1`
+
+all the other specs that i made while creating this project are avalible [here](project_specs.md)
+
+
+## Retrospection on this project:
 my thoughts on this project:
 - I have learned fastapi, even though it's propably styled not in a good way i learned a lot and next time i will write it better
 - I despise pygame
