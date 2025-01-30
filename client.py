@@ -88,7 +88,6 @@ while run:
         resp = requests.get(BASE_URL + "/game_won")
         if resp.status_code == 200:
             winner = resp.json()['message']
-            print(f'winner={winner}')
             while winner == player_order:
                 winner = resp.json()['message']
                 screen.fill((0, 0, 0))

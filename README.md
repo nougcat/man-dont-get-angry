@@ -31,6 +31,14 @@ if you want to choose pawn just select a number from 1-4; basically your pawns a
 
 all the other specs that i made while creating this project are avalible [here](project_specs.md)
 
+## Multimedia
+
+![screenshot of me playing game](multimedia/game-being-played.webp)
+
+![video of game being played(it got a bit laggy, it's fault of recording, game works smoothly) ](multimedia/game-being-played.mp4)
+
+![game was won](multimedia/game-ended.webp)
+
 
 ## Retrospection on this project:
 my thoughts on this project:
