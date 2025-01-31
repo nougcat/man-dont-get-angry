@@ -4,15 +4,16 @@ game of chińczyk (Man, Don't Get Angry)
 
 ## Installation of necessary dependencies
 ```sh
-pip requirements.txt -r
+pip install requirements-client.txt -r
+# pip install requirements-server.txt
 
 ```
 
 ## Running a server
 ```sh
 python3 server.py
-# podman run -it -p 2137:2137 ghcr.io/nougcat/chinczyk
-# docker run -it -p 2137:2137 ghcr.io/nougcat/chinczyk
+# podman run -it -p 2137:2137 ghcr.io/nougcat/chinczyk:latest
+# docker run -it -p 2137:2137 ghcr.io/nougcat/chinczyk:latest
 ```
 
 ## initializing gmae
