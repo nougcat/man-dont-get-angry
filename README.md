@@ -2,7 +2,7 @@
 
 game of chińczyk (Man, Don't Get Angry)
 
-## instalacja potrzebnych pakietów
+## Installation of necessary dependencies
 ```sh
 pip requirements.txt -r
 
@@ -11,6 +11,8 @@ pip requirements.txt -r
 ## Running a server
 ```sh
 python3 server.py
+# podman run -it -p 2137:2137 ghcr.io/nougcat/chinczyk
+# docker run -it -p 2137:2137 ghcr.io/nougcat/chinczyk
 ```
 
 ## initializing gmae
@@ -35,7 +37,7 @@ all the other specs that i made while creating this project are avalible [here](
 
 ![screenshot of me playing game](multimedia/game-being-played.webp)
 
-![video of game being played(it got a bit laggy, it's fault of recording, game works smoothly) ](multimedia/game-being-played.mp4)
+![video of game being played](multimedia/game-being-played.gif)
 
 ![game was won](multimedia/game-ended.webp)
 
