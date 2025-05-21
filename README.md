@@ -1,6 +1,6 @@
 # man don't get angry
 
-game of chińczyk (Man, Don't Get Angry)
+The game of chińczyk (Man, Don't Get Angry)
 
 ## Installation of necessary dependencies
 ```sh
@@ -30,10 +30,12 @@ python3 client.py
 
 rules are [here](https://en.wikipedia.org/wiki/Mensch_%C3%A4rgere_Dich_nicht#Overview)
 
-if you want to choose pawn just select a number from 1-4; basically your pawns are numbered as proximity to the end line. So if a pawn is not on the board you can move it by pressing `4`; but if you want to move pawn that is the closest to finish line just press `1`
+- If you want to choose a pawn, just select a number from 1-4
+- Your pawns are numbered based on proximity to the finish line. 
+- Additional info: If your pawn is not on the board, you can get it on board by pressing any key (1-4) as all the pawns are in the same proximity to the finish line
+- But if you have any pawns on the board, it's crucial to keep in mind and not mindlessly press keys, as you can lose your turn.
 
-all the other specs that i made while creating this project are available [here](project_specs.md)
-
+Before making the project, I made initial specs, and while doing the project, I made small revisions. You can find the final specs [here](project_specs.md)
 ## Multimedia
 
 ![screenshot of me playing game](multimedia/game-being-played.webp)
@@ -44,11 +46,10 @@ all the other specs that i made while creating this project are available [here]
 
 
 ## Retrospection on this project:
-my thoughts on this project:
-- I have learned fastapi, even though it's probably styled not in a good way i learned a lot and next time i will write it better
+- I have learned fastapi, even though it's probably written in the most pythonic way, nor in a way that's the most modern and advised by documentation (because of my lack of skills). Next time, I will make it much clearer.
 - I despise pygame
-- I made a recap of bash function, but also what's not visible - i used [unix pipes](https://en.wikipedia.org/wiki/Pipeline_(Unix)) to get rid of useless garbage that fastapi is showing me, and i focused on warnings, errors and info logs
-- make and [publish my first container image](https://github.com/users/nougcat/packages?repo_name=man-dont-get-angry)
-- make and [publish my first debian package](https://github.com/nougcat/man-dont-get-angry/releases)
+- I had to recap on how to do shell scripts, how [UNIX pipes](https://en.wikipedia.org/wiki/Pipeline_(Unix)) work (so I can focus on just the important logs from fastapi)
+- I made [and published my first container image](https://github.com/users/nougcat/packages?repo_name=man-dont-get-angry)
+- made a debian package, but I have decided to not publish it
 
-overall this project was PITA, but i learned a lot
+overall this project was a PITA, but I have learned a lot
